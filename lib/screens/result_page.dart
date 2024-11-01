@@ -54,7 +54,52 @@ class ResultPage extends StatelessWidget {
                 color: const Color.fromARGB(255, 10, 41, 61),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text('jhj'),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    getClass,
+                    style: TextStyle(
+                      color: colortext,
+                      fontSize: 27.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    bmi,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 100.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Normal BMI range:',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    '18.5 - 25 kg/m2',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    advise,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           // SizedBox(height: 20),
