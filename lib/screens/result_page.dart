@@ -77,16 +77,16 @@ class ResultPage extends StatelessWidget {
                     'Normal BMI range:',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   Text(
-                    '18.5 - 25 kg/m2',
+                    '18 - 25 kg/m2',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   Text(
@@ -95,7 +95,7 @@ class ResultPage extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],

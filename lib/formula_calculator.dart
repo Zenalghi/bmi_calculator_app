@@ -16,7 +16,7 @@ class CalculateForm {
   }
 
   String getClass() {
-    if (isMale == 'Male') {
+    if (isMale) {
       if (_bmi < 18) {
         return 'UNDERWEIGHT';
       } else if (_bmi >= 18 && _bmi < 25) {
