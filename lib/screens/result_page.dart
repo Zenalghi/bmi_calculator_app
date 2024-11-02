@@ -4,11 +4,14 @@ class ResultPage extends StatelessWidget {
   final String bmi;
   final String getClass;
   final String advise;
+  final String normal;
   final Color colortext;
 
-  ResultPage(
-      {required this.bmi,
+  const ResultPage(
+      {super.key,
+      required this.bmi,
       required this.getClass,
+      required this.normal,
       required this.advise,
       required this.colortext});
 
@@ -16,7 +19,7 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'BMI Calculator',
           style: TextStyle(
             color: Colors.white,
@@ -31,11 +34,12 @@ class ResultPage extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 9, 20, 31),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
               child: Container(
-            padding: EdgeInsets.all(20),
-            child: Text(
+            padding: const EdgeInsets.all(15),
+            child: const Text(
               'Your Result',
               style: TextStyle(
                 color: Colors.white,
@@ -49,8 +53,16 @@ class ResultPage extends StatelessWidget {
             child: Container(
               width: 330,
               height: 330,
-              padding: EdgeInsets.all(23),
+              padding: const EdgeInsets.all(23),
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color:
+                        const Color.fromARGB(255, 0, 217, 255).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                  ),
+                ],
                 color: const Color.fromARGB(255, 10, 41, 61),
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -67,13 +79,13 @@ class ResultPage extends StatelessWidget {
                   ),
                   Text(
                     bmi,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 100.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Normal BMI range:',
                     style: TextStyle(
                       color: Colors.white,
@@ -82,8 +94,8 @@ class ResultPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '18 - 25 kg/m2',
-                    style: TextStyle(
+                    normal,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 24.0,
                       fontWeight: FontWeight.w400,
@@ -92,7 +104,7 @@ class ResultPage extends StatelessWidget {
                   Text(
                     advise,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 24.0,
                       fontWeight: FontWeight.w500,
@@ -102,16 +114,26 @@ class ResultPage extends StatelessWidget {
               ),
             ),
           ),
-          // SizedBox(height: 20),
+          SizedBox(height: 15),
           Expanded(
             child: GestureDetector(
               onTap: Navigator.of(context).pop,
               child: Container(
-                color: Colors.black,
-                margin: EdgeInsets.only(top: 20),
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 0, 204, 255),
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      offset: Offset(2, 1),
+                    ),
+                  ],
+                ),
+                margin: const EdgeInsets.only(top: 20),
                 width: double.infinity,
                 height: 60,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'RE-CALCULATE',
                     style: TextStyle(

@@ -1,11 +1,13 @@
-import 'package:bmi_calculator_app/formula_calculator.dart';
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator_app/screens/result_page.dart';
-import 'package:bmi_calculator_app/widgets/weight_selection.dart';
 import 'package:bmi_calculator_app/widgets/gender_selection.dart';
 import 'package:bmi_calculator_app/widgets/height_selection.dart';
+import 'package:bmi_calculator_app/widgets/weight_selection.dart';
+import 'package:bmi_calculator_app/formula_calculator.dart';
+import 'package:bmi_calculator_app/screens/result_page.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   State<Home> createState() => _HomeState();
 }
@@ -46,6 +48,7 @@ class _HomeState extends State<Home> {
           bmi: calc.resultBMI(),
           getClass: calc.getClass(),
           advise: calc.getAdvise(),
+          normal: calc.normal(),
           colortext: calc.colorText(),
         ),
       ),
@@ -56,7 +59,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'BMI Calculator',
           style: TextStyle(
             color: Colors.white,
@@ -71,7 +74,7 @@ class _HomeState extends State<Home> {
       backgroundColor: const Color.fromARGB(255, 9, 20, 31),
       body: Column(
         children: [
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -80,7 +83,7 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Expanded(
             child: Column(
               children: [
@@ -88,7 +91,7 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Expanded(
             child: Column(
               children: [
@@ -99,11 +102,12 @@ class _HomeState extends State<Home> {
           GestureDetector(
             onTap: calculateBMI,
             child: Container(
-              color: Colors.black,
-              margin: EdgeInsets.only(top: 20),
+              decoration: _GlowBox(),
+              // color: Colors.black,
+              margin: const EdgeInsets.only(top: 20),
               width: double.infinity,
               height: 60,
-              child: Center(
+              child: const Center(
                 child: Text(
                   'CALCULATE',
                   style: TextStyle(
@@ -118,5 +122,19 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
+  }
+
+  BoxDecoration _GlowBox() {
+    return const BoxDecoration(
+              color: Colors.black,
+              boxShadow:  [
+                BoxShadow(
+                  color: Color.fromARGB(255, 0, 204, 255),
+                  spreadRadius: 2,
+                  blurRadius: 10,
+                  offset: Offset(2, 1),
+                ),
+              ],
+            );
   }
 }

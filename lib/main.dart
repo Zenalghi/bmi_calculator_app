@@ -14,7 +14,7 @@ class BMI_Calculator_Apps extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: Home(),
+      home: const Home(),
     );
   }
 }

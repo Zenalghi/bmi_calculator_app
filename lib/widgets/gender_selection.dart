@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class PilihGender extends StatefulWidget {
   final Function(bool) onGenderSelected;
 
-  const PilihGender({Key? key, required this.onGenderSelected})
-      : super(key: key);
+  const PilihGender({super.key, required this.onGenderSelected});
 
   @override
   _PilihGenderState createState() => _PilihGenderState();
@@ -26,14 +25,14 @@ class _PilihGenderState extends State<PilihGender> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         GenderCard(
-          icon: Icons.male_outlined,
+          icon: Icons.male_rounded,
           label: 'Male',
           isSelected: isMale,
           onTap: () => selectGender(true),
         ),
         const SizedBox(width: 30),
         GenderCard(
-          icon: Icons.female_outlined,
+          icon: Icons.female_rounded,
           label: 'Female',
           isSelected: !isMale,
           onTap: () => selectGender(false),
@@ -65,6 +64,13 @@ class GenderCard extends StatelessWidget {
         width: 150,
         height: 170,
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromARGB(255, 0, 217, 255).withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+            ),
+          ],
           color: isSelected
               ? const Color.fromARGB(255, 8, 38, 58)
               : Colors.blueGrey.shade900,

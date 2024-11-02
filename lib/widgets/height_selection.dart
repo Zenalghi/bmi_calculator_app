@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class SliderHeight extends StatefulWidget {
   final Function(int) onHeightChanged;
 
-  const SliderHeight({Key? key, required this.onHeightChanged})
-      : super(key: key);
+  const SliderHeight({super.key, required this.onHeightChanged});
 
   @override
   _SliderHeightState createState() => _SliderHeightState();
@@ -22,7 +21,14 @@ class _SliderHeightState extends State<SliderHeight> {
           height: 180,
           padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
-            color: Colors.black87,
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(255, 0, 217, 255).withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+              ),
+            ],
+            color: Colors.black,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Column(

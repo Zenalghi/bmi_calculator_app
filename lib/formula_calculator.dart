@@ -8,7 +8,6 @@ class CalculateForm {
   final int weight;
   final bool isMale;
   double _bmi = 0;
-  Color _textColor = Color.fromARGB(255, 36, 216, 177);
 
   String resultBMI() {
     _bmi = (weight / pow(height / 100, 2));
@@ -39,6 +38,14 @@ class CalculateForm {
     }
   }
 
+  String normal() {
+    if (isMale) {
+      return '18 - 25 kg/m2';
+    } else {
+      return '17 - 23 kg/m2';
+    }
+  }
+
   String getAdvise() {
     if (isMale) {
       if (_bmi > 25) {
@@ -49,7 +56,7 @@ class CalculateForm {
         return 'You have a lower than normal body weight.\n Try to eat more';
       }
     } else {
-      if (_bmi > 27) {
+      if (_bmi > 23) {
         return 'You have a more than normal body weight.\n Try to do more Exercise';
       } else if (_bmi >= 17 && _bmi <= 23) {
         return 'You have a normal body weight.\nGood job!';
@@ -64,13 +71,13 @@ class CalculateForm {
       if (_bmi >= 25 || _bmi < 18) {
         return Colors.deepOrangeAccent;
       } else {
-        return Color(0xFF24D876);
+        return Colors.greenAccent;
       }
     } else {
-      if (_bmi >= 27 || _bmi < 17) {
+      if (_bmi >= 23 || _bmi < 17) {
         return Colors.deepOrangeAccent;
       } else {
-        return Color(0xFF24D876);
+        return Colors.greenAccent;
       }
     }
   }

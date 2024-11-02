@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class PilihWeight extends StatefulWidget {
   final Function(int) onWeightChanged;
 
-  const PilihWeight({Key? key, required this.onWeightChanged})
-      : super(key: key);
+  const PilihWeight({super.key, required this.onWeightChanged});
 
   @override
   _PilihWeightState createState() => _PilihWeightState();
@@ -31,11 +30,18 @@ class _PilihWeightState extends State<PilihWeight> {
 
   @override
   Widget build(BuildContext context) {
+    var boxShadow = BoxShadow(
+      color: const Color.fromARGB(255, 0, 217, 255).withOpacity(0.5),
+      spreadRadius: 5,
+      blurRadius: 7,
+    );
+
     return Container(
       width: 330,
       height: 160,
       // padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
       decoration: BoxDecoration(
+        boxShadow: [boxShadow],
         borderRadius: BorderRadius.circular(15),
         color: Colors.black,
       ),
@@ -56,7 +62,8 @@ class _PilihWeightState extends State<PilihWeight> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  boxShadow: [boxShadow],
+                  color: const Color.fromARGB(255, 13, 63, 66),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: IconButton(
@@ -80,7 +87,8 @@ class _PilihWeightState extends State<PilihWeight> {
               // const SizedBox(width: 50),
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  boxShadow: [boxShadow],
+                  color: const Color.fromARGB(255, 13, 63, 66),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: IconButton(
